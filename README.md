@@ -5,6 +5,8 @@ Part of the job appplication includes writing a small project. This will help bo
 
 You should be able to complete this project within 10-15 hours.
 
+*Submissions close by 11:59pm on the 26th of April, 2017.*
+
 ## Project
 In this project, you'll be making a URL shortner. A URL shortener takes a long URL, and then turns it into a short URL. For example, goo.gl - Google's URL shortener.
 
@@ -29,14 +31,14 @@ At minimum you should have a text box, button, and label. Text box for long URL 
 New to Meteor? Follow the tutorial at [Meteor Tips](http://meteortips.com/). I learnt all the basics I needed to know from it.
 
 Stuck on a UI library to use? I recommend using bootstrap:
-[Bootstrap Homepage](http://getbootstrap.com/)
-[Meteor Package](https://atmospherejs.com/twbs/bootstrap)
+ - [Bootstrap Homepage](http://getbootstrap.com/)
+ - [Meteor Package](https://atmospherejs.com/twbs/bootstrap)
 
 ### Helpful Documentation
 Meteor is comprised of a few basic key components, such as a Router (FlowRouter) and Templating Engine (Blaze). They are fairly well documented at the following links:
-[FlowRouter](https://github.com/kadirahq/flow-router)
-[Blaze](http://blazejs.org/)
-[Meteor](https://docs.meteor.com/)
+ - [FlowRouter](https://github.com/kadirahq/flow-router)
+ - [Blaze](http://blazejs.org/)
+ - [Meteor](https://docs.meteor.com/)
 
 In your first instance, see if meteortips.com has what you're looking for - it might save you sifting through pages of docs.
 
