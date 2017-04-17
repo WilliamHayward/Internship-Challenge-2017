@@ -1,5 +1,4 @@
 # Eante Internship Challenge 2017
----
 If you're reading this, you're probably interested in the Eante internship. If you're interested in us, we're interested in you!
 
 Part of the job appplication includes writing a small project. This will help both you and us understand your suitability for this work. The problems you'll face in this project are very similar to what you'll face in the internship. I don't expect that many of you have used Meteor extensively before - so this will help both us and you understand how quickly you pick up Meteor.
