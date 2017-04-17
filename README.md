@@ -5,7 +5,7 @@ Part of the job appplication includes writing a small project. This will help bo
 
 You should be able to complete this project within 10-15 hours.
 
-*Submissions close by 11:59pm on the 26th of April, 2017.*
+**Submissions close by 11:59pm on the 26th of April, 2017.**
 
 ## Project
 In this project, you'll be making a URL shortner. A URL shortener takes a long URL, and then turns it into a short URL. For example, goo.gl - Google's URL shortener.
