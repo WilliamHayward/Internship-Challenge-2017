@@ -13,7 +13,7 @@
         <input type="submit" value="Shorten"/>
     </form>
     <input type="text" id="txtOutput" value={{urlOutput}}/>
-    <div id="txtCopied"></div>
+    <div id="txtCopied">Text copied</div>
 </template>
 
 <template name="pastURLS">
@@ -21,7 +21,7 @@
         <h2> Past Urls</h2>
         <ul>
         {{#each userURL}}
-            <li> {{longURL}} : {{_id}} </li>
+            <li> {{longURL}} : {{domain}}{{_id}} </li>
         {{/each}}
         </ul>
     {{/if}}
