@@ -4,4 +4,20 @@
 
 body {
     display: none;
+    text-align: center;
+    background-color: paleturquoise;
+}
+
+input {
+    font-size: 36px;
+}
+
+#txtCopied {
+    font-size: 24px;
+    color: gray;
+}
+
+.pastURL {
+    display: block;
+    padding: 5px;
 }

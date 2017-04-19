@@ -9,20 +9,23 @@
 <template name="urlShorten">
     {{> loginButtons}}
     <form id="urlForm">
+        <h1>Please Enter Your URL</h1>
         <input type="text" name="url"/>
-        <input type="submit" value="Shorten"/>
+        <p>
+            <input type="submit" value="Shorten"/>
+        </p>
     </form>
-    <input type="text" id="txtOutput" value={{urlOutput}}/>
-    <div id="txtCopied">Text copied</div>
+    <p>
+        <input type="text" id="txtOutput" value={{urlOutput}}/><br/>
+        <div id="txtCopied">Text copied</div>
+    </p>
 </template>
 
 <template name="pastURLS">
     {{#if currentUser}}
-        <h2> Past Urls</h2>
-        <ul>
+        <h1>Past Urls</h1>
         {{#each userURL}}
-            <li> {{longURL}} : {{domain}}{{_id}} </li>
+            <span class="pastURL"> {{longURL}} : {{domain}}{{_id}}</span>
         {{/each}}
-        </ul>
     {{/if}}
 </template>
