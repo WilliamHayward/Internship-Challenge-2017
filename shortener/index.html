@@ -1,0 +1,14 @@
+<head>
+    <title>URL Shortener</title>
+</head>
+<body>
+    {{> urlShorten}}
+</body>
+
+<template name="urlShorten">
+    <form id="urlForm">
+        <input type="text" name="url"/>
+        <input type="submit" value="Shorten"/>
+    </form>
+    {{urlOutput}}
+</template>
