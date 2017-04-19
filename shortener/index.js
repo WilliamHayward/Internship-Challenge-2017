@@ -1,3 +1,5 @@
+urlList = new Mongo.Collection('urls');
+
 if (Meteor.isClient) {
     Template.urlShorten.events({
         'submit form': function() {
@@ -17,11 +19,19 @@ Meteor.methods({
     'shortenURL': function(url) {
         var alphabet = "abcdefghijxlmnopqrstuvwxyz";
         var shortened = "";
-        for (var i = 0; i < 6; i++) {
-            var position = Math.random() * alphabet.length;
-            position = Math.floor(position);
-            shortened += alphabet[position];
+        while (shortened == "" || urlList.find({_id: shortened}).fetch().length != 0) {
+            for (var i = 0; i < 6; i++) {
+                var position = Math.random() * alphabet.length;
+                position = Math.floor(position);
+                shortened += alphabet[position];
+            }
         }
-        Session.set('urlOutput', shortened);
+        urlList.insert({
+            _id: shortened,
+            longURL: url
+        });
+        if (Meteor.isClient) {
+            Session.set('urlOutput', shortened);
+        }
     }
 })
