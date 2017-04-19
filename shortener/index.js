@@ -8,7 +8,15 @@ if (Meteor.isClient) {
             event.preventDefault(); // Stop page from refreshing
             Meteor.call('shortenURL', event.target.url.value, function(err, shortened) {
                 Session.set("urlOutput", shortened);
+                document.getElementById("txtOutput").style.display = "unset";
             });
+        },
+        'click #txtOutput': function() {
+            document.getElementById("txtOutput").select();
+            var copied = document.execCommand('copy');
+            if (copied) {
+                document.getElementById("txtCopied").innerHTML = "Text copied";
+            }
         }
     });
 
@@ -18,7 +26,11 @@ if (Meteor.isClient) {
             if (shortened == undefined) {
                 return "";
             }
-            return document.domain + "/" + shortened;
+            var domain = document.domain;
+            if (domain == "localhost") {
+                domain += ":3000";
+            }
+            return domain + "/" + shortened;
         }
     });
 
