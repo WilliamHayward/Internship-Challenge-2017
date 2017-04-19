@@ -3,12 +3,25 @@
 </head>
 <body>
     {{> urlShorten}}
+    {{> pastURLS}}
 </body>
 
 <template name="urlShorten">
+    {{> loginButtons}}
     <form id="urlForm">
         <input type="text" name="url"/>
         <input type="submit" value="Shorten"/>
     </form>
     {{urlOutput}}
+</template>
+
+<template name="pastURLS">
+    {{#if currentUser}}
+        <h2> Past Urls</h2>
+        <ul>
+        {{#each userURL}}
+            <li> {{longURL}} : {{_id}} </li>
+        {{/each}}
+        </ul>
+    {{/if}}
 </template>

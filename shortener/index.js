@@ -1,6 +1,8 @@
 urlList = new Mongo.Collection('urls');
 
 if (Meteor.isClient) {
+    Meteor.subscribe('userData');
+
     Template.urlShorten.events({
         'submit form': function() {
             event.preventDefault(); // Stop page from refreshing
@@ -19,11 +21,26 @@ if (Meteor.isClient) {
             return document.domain + "/" + shortened;
         }
     });
+
+    Template.pastURLS.helpers({
+        'userURL': function() {
+            return urlList.find();
+        }
+    })
+}
+
+if (Meteor.isServer) {
+    Meteor.publish('userData', function(){
+        var user = this.userId;
+        return urlList.find({user: user});
+    });
 }
 
 Meteor.methods({
     'shortenURL': function(url) {
         if (Meteor.isServer) {
+            var user = Meteor.userId();
+            console.log(Meteor.userId());
             var alphabet = "abcdefghijxlmnopqrstuvwxyz";
             var shortened = "";
             do {
@@ -36,19 +53,24 @@ Meteor.methods({
             urlList.insert({
                 _id: shortened,
                 longURL: url,
+                user: user
             });
             return shortened;
         }
-        /*if (Meteor.isClient) {
-            Session.set('urlOutput', shortened);
-        }*/
     },
     'getURL': function(shortened) {
         if (Meteor.isServer) {
-            var url = urlList.find({
+            var url = urlList.findOne({
                 _id: shortened
-            }).fetch()[0].longURL;
+            }).longURL;
             return url;
+        }
+    },
+    'getUserURLs': function() {
+        if (Meteor.isServer) {
+            var user = Meteor.userId();
+            console.log("User:" + user);
+            return urlList.find({user: user});
         }
     }
 });
