@@ -17,4 +17,4 @@ The project (with all optional goals) was completed in just over 3 hours, with t
 |Styling/Polish|12:37pm|12:55pm|
 
 ## Setup
-Run "meteor" in shortener director
+Run "meteor" in shortener directory
